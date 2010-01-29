@@ -60,25 +60,23 @@ $.each(MP_DATA, function() {
 
 // ***
 
+function followMouse(ev){
+    $('#newspaper-detail')
+        .css({
+            left:ev.pageX,
+            top:ev.pageY
+        });
+        
+    $(document).click(function(){
+        $(document)
+            .unbind('mousemove', followMouse);
+        $('#newspaper-detail')
+            .remove();
+    });
+}
 
 $('.parties')
     .click(function(ev){
-        function followMouse(ev){
-            $('#newspaper-detail')
-                .css({
-                    left:ev.pageX,
-                    top:ev.pageY
-                });
-                
-            $(document).click(function(){
-                $(document)
-                    .unbind('mousemove', followMouse);
-                $('#newspaper-detail')
-                    .remove();
-            });
-        }
-    
-    
         $('body')
             .append(
                 $(tmpl('newspaper', {}))
@@ -88,7 +86,7 @@ $('.parties')
                     })
             );
         $(document)
-            .mousemove(followMouse);
+            .bind('mousemove', followMouse);
     });
 
 
