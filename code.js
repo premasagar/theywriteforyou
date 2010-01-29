@@ -37,6 +37,26 @@
 })();
 
 
+var papers = {};
+$.each(MP_DATA, function() {
+    var name = this.url.split('/').slice(-1)[0].replace('-', ' ')
+    var url = this.url;
+    var constituency = this.constituency;
+    var party = this.party;
+    $.each(this.pub_counts, function(paper, count) {
+        if (!papers[paper]) {
+            papers[paper] = {};
+        }
+        if (!papers[paper][party]) {
+            papers[paper][party] = {};
+        }
+        if (!papers[paper][party][name]) {
+            papers[paper][party][name] = 0;
+        }
+        papers[paper][party][name] += count;
+    });
+});
+
 // ***
 
 
