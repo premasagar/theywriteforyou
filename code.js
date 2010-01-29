@@ -92,7 +92,6 @@ $('.parties')
 
 function createNewspapers(papers) {
     $.each(papers, function(name, parties) {
-        console.log(name, parties);
         var li = $('<li></li>');
         $('.newspapers').append(li);
         var klass = name.toLowerCase().replace(/ /, '-');
