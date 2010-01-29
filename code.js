@@ -85,3 +85,32 @@ $('.parties')
                     });
             });
     });
+
+
+function createNewspapers(papers) {
+    $.each(papers, function(name, parties) {
+        console.log(name, parties);
+        var li = $('<li></li>');
+        $('.newspapers').append(li);
+        var klass = name.toLowerCase().replace(/ /, '-');
+        li.addClass(klass);
+        $('<h2></h2>').text(name).appendTo(li);
+        var ul = $('<ul></ul>').appendTo(li);
+        
+        var total = 0;
+        $.each(parties, function(party_name, obj) {
+            total += obj.total;
+        });
+        
+        $.each(parties, function(party_name, obj) {
+            var klass = party_name.toLowerCase().replace(/ /, '-');
+            var li = $('<li></li>').attr('title', party_name);
+            li.appendTo(ul);
+            li.height((obj.total / total) * 200);
+            li.addClass(klass);
+            li.appendTo(ul);
+        });
+    });
+}
+
+createNewspapers(papers);
