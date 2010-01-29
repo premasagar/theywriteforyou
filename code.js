@@ -80,7 +80,7 @@ $(document)
     });
 
 $('.parties')
-    .mouseover(function(ev){
+    .live('mouseover', function(ev){
         $('#newspaper-detail').show();
     });
 
@@ -92,7 +92,7 @@ function createNewspapers(papers) {
         var klass = name.toLowerCase().replace(/ /, '-');
         li.addClass(klass);
         $('<h2></h2>').text(name).appendTo(li);
-        var ul = $('<ul></ul>').appendTo(li);
+        var ul = $('<ul class="parties"></ul>').appendTo(li);
         
         var total = 0;
         $.each(parties, function(party_name, obj) {
