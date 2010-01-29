@@ -107,7 +107,7 @@ function createNewspapers(papers) {
         
         $.each(parties, function(party_name, obj) {
             var klass = party_name.toLowerCase().replace(/ /, '-');
-            var li = $('<li></li>').attr('title', party_name);
+            var li = $('<li></li>').attr('title', party_name + ', ' + obj.total + ' article' + (obj.total == 1 ? '' : 's'));
             li.appendTo(ul);
             li.height((obj.total / total) * 200);
             li.addClass(klass);
