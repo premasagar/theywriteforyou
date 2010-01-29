@@ -67,23 +67,21 @@ $.each(MP_DATA, function() {
 
 
 var detail = $(tmpl('newspaper', {}))
-    .css({
-        left:ev.pageX,
-        top:ev.pageY
-    })
     .hide()
     .appendTo('body');
 
+$(document)
+    .bind('mousemove', function(ev){
+        detail
+            .css({
+                left:ev.pageX,
+                top:ev.pageY
+            });
+    });
+
 $('.parties')
     .mouseover(function(ev){
-        $(document)
-            .bind('mousemove', function(){
-                $('#newspaper-detail')
-                    .css({
-                        left:ev.pageX,
-                        top:ev.pageY
-                    });
-            });
+        $('#newspaper-detail').show();
     });
 
 
