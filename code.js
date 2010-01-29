@@ -86,8 +86,9 @@ $('.parties li')
         var
             party = $(ev.currentTarget).attr('class'),
             partyName = (party.slice(0,1).toUpperCase() + party.slice(1)).replace('-', ' '),
-            mps = $(this).data('party').mps,
-            html = '<strong>' + partyName + '</strong><ul>';
+            partyData = $(this).data('party'),
+            mps = partyData.mps,
+            html = '<strong>' + partyName + '</strong> (' + partyData.total + ')<ul>';
         
         $.each(mps, function(mp, articles){
             html +=
@@ -101,29 +102,32 @@ $('.parties li')
     });
 
 
-function createNewspapers(papers) {
-    $.each(papers, function(name, parties) {
-        var li = $('<li></li>');
-        $('.newspapers').append(li);
-        var klass = name.toLowerCase().replace(/ /, '-');
-        li.addClass(klass);
-        var ul = $('<ul class="parties"></ul>').appendTo(li);
-        
-        var total = 0;
-        $.each(parties, function(party_name, obj) {
-            total += obj.total;
-        });
-        $('<h2></h2>').text(name + ' (' + total + ')').appendTo(li);
-        
-        $.each(parties, function(party_name, obj) {
-            var klass = party_name.toLowerCase().replace(/ /g, '-');
-            var li = $('<li></li>').attr('title', party_name + ', ' + obj.total + ' article' + (obj.total == 1 ? '' : 's'));
-            li.appendTo(ul);
-            li.data('party', obj);
-            li.height((obj.total / total) * 200);
+function createNewspapers(papers){
+    $.each(papers, function(newspaper, parties){
+        // Parallel processing
+        window.setTimeout(function(){
+            var li = $('<li></li>');
+            $('.newspapers').append(li);
+            var klass = newspaper.toLowerCase().replace(/ /, '-');
             li.addClass(klass);
-            li.appendTo(ul);
-        });
+            var ul = $('<ul class="parties"></ul>').appendTo(li);
+            
+            var total = 0;
+            $.each(parties, function(party_name, obj) {
+                total += obj.total;
+            });
+            $('<h2></h2>').text(newspaper + ' (' + total + ')').appendTo(li);
+            
+            $.each(parties, function(party_name, obj) {
+                var klass = party_name.toLowerCase().replace(/ /g, '-');
+                var li = $('<li></li>');
+                li.appendTo(ul);
+                li.data('party', obj);
+                li.height((obj.total / total) * 200);
+                li.addClass(klass);
+                li.appendTo(ul);
+            });
+        },0);
     });
 }
 

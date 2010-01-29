@@ -1,0 +1,4 @@
+Julian Burgess - Ruby scraping
+Rob McKinnon - Ruby scraping
+Jonathan Richards - Ruby - labs.timesonline.co.uk
+Anna Powell-Smith - Python - twitter.com/darkgreener

@@ -3,7 +3,7 @@
 <head>
     <meta charset=utf-8 />
     <title>They Write For You</title>
-    <script src=jquery.min.js></script>
+    <script src=http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js></script>
     <script src=data.js></script>
     <style>
         ul, li {
@@ -28,9 +28,10 @@
             position:absolute;
             z-index:99;
             top: -3em;
-            font-size:0.9em;
-            margin:1.62em 0.16em 0;
+            font-size:0.8em;
+            margin:1.62em 0 0;
             padding:0;
+            width:130%;
         }
         .parties {
             width:100%;
@@ -64,11 +65,12 @@
         #newspaper-detail {
             position:absolute;
             z-index:999;
+            cursor:pointer;
             opacity:0.82;
             color:#000;
             padding:1.62em;
             margin:0;
-            border:1px solid #777;
+            border:1px solid #999;
         }
     </style>
     
@@ -80,42 +82,11 @@
 
 <body>
     <h1>They Write For You</h1>
+    <p>This demonstrates the influence of British MPs in newspapers, showing those MPs who have been paid to write newspaper articles, and the influence of party politics in the mainstream media <em>(2008 - 2010)</em>.</p>
+    <p>Created in several hours at the Hackers & Hacks Hackday, with data from <a href=http://journalisted.com>Journalisted</a>, using <a href=http://scraperwiki.com>ScraperWiki</a>, Python, Ruby and JavaScript. By <a href=http://labs.timesonline.co.uk>Jonathan</a>, <a href=http://twitter.com/darkgreener>Anna</a> and <a href=http://premasagar.com>Premasagar</a>, with <a href=http://simonwillison.net>Simon</a>, <a href=http://labs.timesonline.co.uk>Julian</a> and <a href=http://theyworkforyou.co.nz>Rob</a>.</p>
+    <p><a href=http://github.com/premasagar/theywriteforyou>The code is available on GitHub.</a> Feel free to download it, change it and submit it back.</p>
     
-    <ul class=newspapers>
-        
-        
-        
-    </ul>
-    <!--
-        <li class="the-times">
-            <h2>The Times</h2>
-            <ul class=parties>
-                <li class=labour></li>
-                <li class=conservative></li>
-                <li class=libdem></li>
-                <li class=green></li>
-            </ul>
-        </li>
-        <li class="the-guardian">
-            <h2>The Guardian</h2>
-            <ul class=parties>
-                <li class=labour></li>
-                <li class=conservative></li>
-                <li class=libdem></li>
-                <li class=green></li>
-            </ul>
-        </li>
-        <li class="the-independent">
-            <h2>The Independent</h2>
-            <ul class=parties>
-                <li class=labour></li>
-                <li class=conservative></li>
-                <li class=libdem></li>
-                <li class=green></li>
-            </ul>
-        </li>
-    </ul>
-    -->
+    <ul class=newspapers></ul>
     
     <script src=code.js></script>
 </body>
