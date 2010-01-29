@@ -1,7 +1,9 @@
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 (function(){
-  var cache = {};
+  var
+    cache = {}
+    _ = console && console.log ? console.log : function(){};
   
   this.tmpl = function tmpl(str, data){
     // Figure out if we're getting a template, or if we need to
@@ -39,7 +41,28 @@
 
 
 $('.parties')
-    .click(function(){
+    .click(function(ev){
+        function followMouse(ev){
+            $('#newspaper-detail')
+                .css({
+                    left:ev.pageX,
+                    top:ev.pageY
+                });
+                
+            $(document).click(function(){
+                $(document).unbind(followMouse);
+            });
+        }
+    
+    
         $('body')
-            .append(tmpl('newspaper', {}));
+            .append(
+                $(tmpl('newspaper', {}))
+                    .css({
+                        left:ev.pageX,
+                        top:ev.pageY
+                    })
+            );
+        $(document)
+            .mousemove(followMouse);
     });
