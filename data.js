@@ -1,4 +1,4 @@
-[
+var MP_DATA = [
 {
     "pub_counts": {
         "The Daily Telegraph": 1
@@ -1853,4 +1853,4 @@
     "url": "http://www.journalisted.com/John-Bercow",
     "constituency": "Buckingham"
 }
-]
+];
