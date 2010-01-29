@@ -59,32 +59,29 @@ $.each(MP_DATA, function() {
 });
 
 // ***
-
-function followMouse(ev){
-    $('#newspaper-detail')
-        .css({
-            left:ev.pageX,
-            top:ev.pageY
-        });
         
-    $(document).click(function(){
-        $(document)
-            .unbind('mousemove', followMouse);
+    $(document).one('click', function(){
         $('#newspaper-detail')
-            .remove();
+            .hide();
     });
-}
+
+
+var detail = $(tmpl('newspaper', {}))
+    .css({
+        left:ev.pageX,
+        top:ev.pageY
+    })
+    .hide()
+    .appendTo('body');
 
 $('.parties')
-    .click(function(ev){
-        $('body')
-            .append(
-                $(tmpl('newspaper', {}))
+    .mouseover(function(ev){
+        $(document)
+            .bind('mousemove', function(){
+                $('#newspaper-detail')
                     .css({
                         left:ev.pageX,
                         top:ev.pageY
-                    })
-            );
-        $(document)
-            .bind('mousemove', followMouse);
+                    });
+            });
     });
