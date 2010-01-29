@@ -22,12 +22,13 @@
             margin: 1.62em 1.62em 1.62em;
             height:12.4em;
             position: relative;
+            padding:-1px;
         }
         .newspapers h2 {
             position:absolute;
             z-index:99;
             top: -3em;
-            font-size:1em;
+            font-size:0.9em;
             margin:1.62em 0.16em 0;
             padding:0;
         }
@@ -40,48 +41,39 @@
             cursor:pointer;
         }
         .labour {
-            background-color:#f99;
-            height:20%;
+            background-color:#f66;
         }
         .conservative {
-            background-color:#99f;
-            height:20%;
+            background-color:#66f;
         }
         .liberal-democrat {
-            background-color:#ff9;
-            height:20%;
+            background-color:#ff6;
         }
         .dup {
-            background-color: purple;
+            background-color:#f6f;
         }
         .green {
-            background-color:#9f9;
-            height:20%;
+            background-color:#6f6;
+        }
+        .independent {
+            background-color:#ccc;
+        }
+        .scottish-national-party {
+            background-color:#cc3;
         }
         #newspaper-detail {
             position:absolute;
             z-index:999;
-            top:1.62em;
-            opacity:0.92;
-            background-color:#000;
-            color:#fff;
-        }
-        #newspaper-detail dl {
+            opacity:0.82;
+            color:#000;
             padding:1.62em;
             margin:0;
+            border:1px solid #777;
         }
     </style>
     
     <script type=text/template id=newspaper>
-        <div id=newspaper-detail>
-            <dl class=labour>
-                <dt>Tony Blair</dt>
-                <dd>7 articles</dd>
-                
-                <dt>David Blunket</dt>
-                <dd>7 articles</dd>
-            </dl>
-        </div>
+        <div id=newspaper-detail></div>
     </script>
     
 </head>

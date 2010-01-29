@@ -39,10 +39,12 @@
 
 var papers = {};
 $.each(MP_DATA, function() {
-    var name = this.url.split('/').slice(-1)[0].replace('-', ' ')
-    var url = this.url;
-    var constituency = this.constituency;
-    var party = this.party;
+    var
+        mpName = this.url.split('/').slice(-1)[0].replace('-', ' '),
+        url = this.url,
+        constituency = this.constituency,
+        party = this.party;
+        
     $.each(this.pub_counts, function(paper, count) {
         if (!papers[paper]) {
             papers[paper] = {};
@@ -50,10 +52,10 @@ $.each(MP_DATA, function() {
         if (!papers[paper][party]) {
             papers[paper][party] = {'mps': {}, 'total': 0};
         }
-        if (!papers[paper][party]['mps'][name]) {
-            papers[paper][party]['mps'][name] = 0;
+        if (!papers[paper][party]['mps'][mpName]) {
+            papers[paper][party]['mps'][mpName] = 0;
         }
-        papers[paper][party]['mps'][name] += count;
+        papers[paper][party]['mps'][mpName] += count;
         papers[paper][party]['total'] += count;
     });
 });
@@ -79,9 +81,23 @@ $(document)
             });
     });
 
-$('.parties')
+$('.parties li')
     .live('mouseover', function(ev){
-        $('#newspaper-detail').show();
+        var
+            party = $(ev.currentTarget).attr('class'),
+            partyName = (party.slice(0,1).toUpperCase() + party.slice(1)).replace('-', ' '),
+            mps = $(this).data('party').mps,
+            html = '<strong>' + partyName + '</strong><ul>';
+        
+        $.each(mps, function(mp, articles){
+            html +=
+                '<li>' + mp + ': ' + articles + '</li>';
+        });
+        
+        $('#newspaper-detail')
+            .attr('class', party)
+            .html(html + '</ul>')
+            .show();
     });
 
 
@@ -100,9 +116,10 @@ function createNewspapers(papers) {
         $('<h2></h2>').text(name + ' (' + total + ')').appendTo(li);
         
         $.each(parties, function(party_name, obj) {
-            var klass = party_name.toLowerCase().replace(/ /, '-');
+            var klass = party_name.toLowerCase().replace(/ /g, '-');
             var li = $('<li></li>').attr('title', party_name + ', ' + obj.total + ' article' + (obj.total == 1 ? '' : 's'));
             li.appendTo(ul);
+            li.data('party', obj);
             li.height((obj.total / total) * 200);
             li.addClass(klass);
             li.appendTo(ul);
