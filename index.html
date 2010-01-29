@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=utf-8 />
+    <title>They Write For You</title>
+    <script src=jquery.min.js></script>
+    
+    <style>
+        ul, li {
+            list-style-type:none;
+            padding:0;
+            margin:0;
+        }
+        .newspapers {
+            position:relative;
+        }
+        .newspapers > li {
+            border:1px solid #999;
+            background-color:#ccc;
+            width:16.2%;
+            float:left;
+            margin:0 1.62em 1.62em;
+            height:12.4em;
+        }
+        .newspapers h2 {
+            position:absolute;
+            z-index:99;
+            top:1.62em;
+            font-size:1em;
+            margin:1.62em 0.16em 0;
+            padding:0;
+        }
+        .parties {
+            width:100%;
+            height:100%;
+        }
+        .parties li {
+            opacity:0.92;
+            cursor:pointer;
+        }
+        .labour {
+            background-color:#f99;
+            height:20%;
+        }
+        .conservative {
+            background-color:#99f;
+            height:20%;
+        }
+        .libdem {
+            background-color:#ff9;
+            height:20%;
+        }
+        .green {
+            background-color:#9f9;
+            height:20%;
+        }
+        .newspaper-detail {
+            position:absolute;
+            top:1.62em;
+            opacity:0.72;
+            background-color:#000;
+            color:#fff;
+        }
+    </style>
+    
+    <script type=text/template id=newspaper>
+        <div class=newspaper-detail>
+            <dl class=labour>
+                <dt>Tony Blair</dt>
+                <dd>7 articles</dd>
+                
+                <dt>David Blunket</dt>
+                <dd>7 articles</dd>
+            </dl>
+        </div>
+    </script>
+    
+</head>
+
+<body>
+    <h1>They Write For You</h1>
+    
+    <ul class=newspapers>
+        <li>
+            <h2>The Times</h2>
+            <ul class=parties>
+                <li class=labour></li>
+                <li class=conservative></li>
+                <li class=libdem></li>
+                <li class=green></li>
+            </ul>
+        </li>
+        <li>
+            <h2>The Guardian</h2>
+            <ul class=parties>
+                <li class=labour></li>
+                <li class=conservative></li>
+                <li class=libdem></li>
+                <li class=green></li>
+            </ul>
+        </li>
+        <li>
+            <h2>The Independent</h2>
+            <ul class=parties>
+                <li class=labour></li>
+                <li class=conservative></li>
+                <li class=libdem></li>
+                <li class=green></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script src=code.js></script>
+</body>
+</html>
