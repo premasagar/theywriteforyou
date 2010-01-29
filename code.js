@@ -70,7 +70,10 @@ $('.parties')
                 });
                 
             $(document).click(function(){
-                $(document).unbind(followMouse);
+                $(document)
+                    .unbind('mousemove', followMouse);
+                $('#newspaper-detail')
+                    .remove();
             });
         }
     
