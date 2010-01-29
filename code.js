@@ -91,13 +91,13 @@ function createNewspapers(papers) {
         $('.newspapers').append(li);
         var klass = name.toLowerCase().replace(/ /, '-');
         li.addClass(klass);
-        $('<h2></h2>').text(name).appendTo(li);
         var ul = $('<ul></ul>').appendTo(li);
         
         var total = 0;
         $.each(parties, function(party_name, obj) {
             total += obj.total;
         });
+        $('<h2></h2>').text(name + ' (' + total + ')').appendTo(li);
         
         $.each(parties, function(party_name, obj) {
             var klass = party_name.toLowerCase().replace(/ /, '-');
