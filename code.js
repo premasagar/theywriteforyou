@@ -48,12 +48,13 @@ $.each(MP_DATA, function() {
             papers[paper] = {};
         }
         if (!papers[paper][party]) {
-            papers[paper][party] = {};
+            papers[paper][party] = {'mps': {}, 'total': 0};
         }
-        if (!papers[paper][party][name]) {
-            papers[paper][party][name] = 0;
+        if (!papers[paper][party]['mps'][name]) {
+            papers[paper][party]['mps'][name] = 0;
         }
-        papers[paper][party][name] += count;
+        papers[paper][party]['mps'][name] += count;
+        papers[paper][party]['total'] += count;
     });
 });
 
