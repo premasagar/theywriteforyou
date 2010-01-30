@@ -3,7 +3,7 @@ var
     _ = win.console && win.console.firebug ? win.console.log : function(){},
     papers = {};
 
-$.each(MP_DATA, function() {
+$.each(MP_DATA, function(){
     var
         mpName = this.url.split('/').slice(-1)[0].replace('-', ' '),
         url = this.url, // as yet unused
@@ -89,7 +89,7 @@ function createNewspapers(papers){
         });
     
         $('<li class="' + newspaperTitle.toLowerCase().replace(/ /, '-') + '">' + 
-            '<h2>' + newspaperTitle + ' (' + total + ')</h2>' +
+            '<h2 title="' + total + ' articles by MPs">' + newspaperTitle + ' (' + total + ')</h2>' +
         '</li>')
             .append(partiesHtml)
             .appendTo('.newspapers');

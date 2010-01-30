@@ -5,6 +5,10 @@
     <title>They Write For You</title>
     <script src=http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js></script>
     <style>
+        body {
+            margin:0;
+            padding:0.16em 1.6em 1.6em;
+        }    
         ul, li {
             list-style-type:none;
             padding:0;
@@ -14,12 +18,17 @@
             font-size:1.62em;
             margin-left:1em;
         }
+        abbr {
+            cursor:help;
+        }
         .intro {
             width:61.8%;
             margin-left:1.62em;
         }
         .newspapers {
             position:relative;
+            width:100%;
+            overflow:auto;
         }
         .newspapers > li {
             background-color:#ccc;
@@ -38,6 +47,7 @@
             margin:1.62em 0 0;
             padding:0;
             width:130%;
+            cursor:help;
         }
         .parties {
             width:100%;
@@ -60,17 +70,14 @@
         .dup {
             background-color:#f6f;
         }
-        .green {
-            background-color:#6f6;
-        }
-        .independent, .speaker, .respect {
+        .independent, independent-labour, .speaker, .respect {
             background-color:#ccc;
         }
         .scottish-national-party {
             background-color:#cc3;
         }
-        .sinn-fein {
-            background-color:#6c6;
+        .green, .sinn-fein, .plaid-cymru {
+            background-color:#6f6;
         }
         #newspaper-detail {
             position:absolute;
@@ -87,15 +94,13 @@
 </head>
 
 <body>
-    <h1>They Write For You</h1>
+    <h1><a href=http://dharmafly.com/theywriteforyou title="They Write For You">They Write For You</a></h1>
     <div class=intro>
-        <p>This mashup demonstrates the influence of British MPs in newspapers, showing those MPs who have been paid to write newspaper articles, and the potential influence of party politics in mainstream media <em>(2008 - 2010)</em>.</p>
+        <p>This mashup demonstrates the influence of British <abbr title="Members of Parliament">MPs</abbr> in newspapers, showing those MPs who have been paid to write newspaper articles, and the potential influence of party politics in mainstream media. (Rollover the newspapers, for further info).</p>
         
-        <p>Created in just a few hours at the <a href=http://blog.scraperwiki.com/post/276214472/data-driven-journalism-hackday>Hackers & Hacks Hackday</a>, with data from <a href=http://journalisted.com>Journalisted</a>, using <a href=http://scraperwiki.com>ScraperWiki</a>, Python, Ruby and JavaScript.</p>
+        <p>Created in just a few hours at the <em>data journalism</em> <a href=http://blog.scraperwiki.com/post/276214472/data-driven-journalism-hackday title="ScraperWiki's data journalism hackday">"Hackers & Hacks Hackday"</a>, with data from <a href=http://journalisted.com title="Journalisted">Journalisted</a> (from 2008-2010), using <a href=http://scraperwiki.com title="ScraperWiki">ScraperWiki</a>, Python, Ruby and JavaScript.</p>
         
-        <p>By <a href=http://labs.timesonline.co.uk>Jonathan Richards</a>, <a href=http://twitter.com/darkgreener>Anna Powell-Smith</a>, <a href=http://twitter.com/premasagar>Premasagar Rose</a>, with <a href=http://twitter.com/simonw>Simon Willison</a>, <a href=http://blog.opening-times.co.uk>Julian Burgess</a> and <a href=http://theyworkforyou.co.nz>Rob McKinnon</a>.</p>
-        
-        <p>The code is <a href=http://github.com/premasagar/theywriteforyou>available on GitHub.</a> Feel free to download it, change it and submit it back.</p>
+        <p>By <a href=http://labs.timesonline.co.uk title="Jonathan Richards">Jonathan</a>, <a href=http://twitter.com/darkgreener title="Anna Powell-Smith">Anna</a>, <a href=http://twitter.com/premasagar title="Premasagar Rose">Prem</a>, <a href=http://twitter.com/simonw title="Simon Willison">Simon</a>, <a href=http://blog.opening-times.co.uk title="Julian Burgess">Julian</a> and <a href=http://theyworkforyou.co.nz title="Rob McKinnon">Rob</a>, (<a href=http://www.theyworkforyou.com title="They Work For You">with hat-tips</a>). The <a href=http://github.com/premasagar/theywriteforyou title="They Write For You, on GitHub">code is on GitHub.</a> Feel free to fork it, change it and submit it back.</p>
     </div>
     
     <ul class=newspapers></ul>
