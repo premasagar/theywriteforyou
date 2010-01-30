@@ -4,4 +4,4 @@ This mashup demonstrates the influence of British MPs in newspapers, showing tho
         
 Created in just a few hours at the "Hackers & Hacks Hackday":http://blog.scraperwiki.com/post/276214472/data-driven-journalism-hackday, with data from "Journalisted":http://journalisted.com, using "ScraperWiki":http://scraperwiki.com, Python, Ruby and JavaScript. By "Jonathan":http://labs.timesonline.co.uk, "Anna":http://twitter.com/darkgreener, "Premasagar":http://twitter.com/premasagar, "Simon":http://simonwillison.net, "Julian":http://labs.timesonline.co.uk and "Rob":http://theyworkforyou.co.nz.
 
-"MIT license":http://opensource.org/licenses/mit-license.php - go fer it...
+("MIT license":http://opensource.org/licenses/mit-license.php)
