@@ -1,7 +1,7 @@
 "They Write For You":http://github.com/premasagar/theywriteforyou
-A demo is at: "dharmafly.com/theywriteforyou":http://dharmafly.com/theywriteforyou
+A demo is at: "dharmafly.com/theywriteforyou":http://dharmafly.com/theywriteforyou/
 
-This mashup demonstrates the influence of British MPs in newspapers, showing those MPs who have been paid to write newspaper articles, and the potential influence of party politics in mainstream media _(2008 - 2010)_.
+This mashup demonstrates the influence of British MPs in newspapers, showing those MPs who have been paid to write newspaper articles, and the potential influence of party politics in mainstream media.
         
 Created in just a few hours at the "Hackers & Hacks Hackday":http://blog.scraperwiki.com/post/276214472/data-driven-journalism-hackday, with data from "Journalisted":http://journalisted.com, using "ScraperWiki":http://scraperwiki.com, Python, Ruby and JavaScript. By "Jonathan Richards":http://labs.timesonline.co.uk, "Anna Powell-Smith":http://twitter.com/darkgreener, "Premasagar Rose":http://twitter.com/premasagar, "Simon Willison":http://twitter.com/simonw, "Julian Burgess":http://blog.opening-times.co.uk and "Rob McKinnon":http://theyworkforyou.co.nz.
 
