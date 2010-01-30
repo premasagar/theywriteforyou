@@ -4,18 +4,24 @@
     <meta charset=utf-8 />
     <title>They Write For You</title>
     <script src=http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js></script>
-    <script src=data.js></script>
     <style>
         ul, li {
             list-style-type:none;
             padding:0;
             margin:0;
         }
+        h1 {
+            font-size:1.62em;
+            margin-left:1em;
+        }
+        .intro {
+            width:61.8%;
+            margin-left:1.62em;
+        }
         .newspapers {
             position:relative;
         }
         .newspapers > li {
-            border:1px solid #999;
             background-color:#ccc;
             width:16.2%;
             float:left;
@@ -36,6 +42,7 @@
         .parties {
             width:100%;
             height:100%;
+            outline:1px solid #aaa;
         }
         .parties li {
             opacity:0.92;
@@ -56,11 +63,14 @@
         .green {
             background-color:#6f6;
         }
-        .independent {
+        .independent, .speaker, .respect {
             background-color:#ccc;
         }
         .scottish-national-party {
             background-color:#cc3;
+        }
+        .sinn-fein {
+            background-color:#6c6;
         }
         #newspaper-detail {
             position:absolute;
@@ -71,23 +81,27 @@
             padding:1.62em;
             margin:0;
             border:1px solid #999;
+            display:none;
         }
     </style>
-    
-    <script type=text/template id=newspaper>
-        <div id=newspaper-detail></div>
-    </script>
-    
 </head>
 
 <body>
     <h1>They Write For You</h1>
-    <p>This demonstrates the influence of British MPs in newspapers, showing those MPs who have been paid to write newspaper articles, and the potential influence of party politics in mainstream media <em>(2008 - 2010)</em>.</p>
-    <p>Created in several hours at the Hackers & Hacks Hackday, with data from <a href=http://journalisted.com>Journalisted</a>, using <a href=http://scraperwiki.com>ScraperWiki</a>, Python, Ruby and JavaScript. By <a href=http://labs.timesonline.co.uk>Jonathan</a>, <a href=http://twitter.com/darkgreener>Anna</a> and <a href=http://premasagar.com>Premasagar</a>, with <a href=http://simonwillison.net>Simon</a>, <a href=http://labs.timesonline.co.uk>Julian</a> and <a href=http://theyworkforyou.co.nz>Rob</a>.</p>
-    <p><a href=http://github.com/premasagar/theywriteforyou>The code is available on GitHub.</a> Feel free to download it, change it and submit it back.</p>
+    <div class=intro>
+        <p>This mashup demonstrates the influence of British MPs in newspapers, showing those MPs who have been paid to write newspaper articles, and the potential influence of party politics in mainstream media <em>(2008 - 2010)</em>.</p>
+        
+        <p>Created in just a few hours at the <a href=http://blog.scraperwiki.com/post/276214472/data-driven-journalism-hackday>Hackers & Hacks Hackday</a>, with data from <a href=http://journalisted.com>Journalisted</a>, using <a href=http://scraperwiki.com>ScraperWiki</a>, Python, Ruby and JavaScript. By <a href=http://labs.timesonline.co.uk>Jonathan</a>, <a href=http://twitter.com/darkgreener>Anna</a> and <a href=http://twitter.com/premasagar>Premasagar</a>, with <a href=http://simonwillison.net>Simon</a>, <a href=http://labs.timesonline.co.uk>Julian</a> and <a href=http://theyworkforyou.co.nz>Rob</a>.</p>
+        
+        <p><a href=http://github.com/premasagar/theywriteforyou>The code is available on GitHub.</a> Feel free to download it, change it and submit it back.</p>
+    </div>
     
     <ul class=newspapers></ul>
+    <div id=newspaper-detail></div>
     
+    <a href=http://github.com/premasagar/theywriteforyou title="They Write For You, on GitHub"><img style="position: absolute; top: 0; right: 0; border: 0;" src=http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png alt="Fork me on GitHub" /></a>
+    
+    <script src=data.js></script>
     <script src=code.js></script>
 </body>
 </html>
